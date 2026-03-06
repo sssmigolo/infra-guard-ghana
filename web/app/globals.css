@@ -1,0 +1,74 @@
+/* MIT License - Copyright (c) 2026 InfraGuard AI Contributors */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --ghana-gold: #FCD116;
+    --ghana-green: #006B3F;
+    --ghana-red: #CE1126;
+  }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-lg bg-white/5 border border-white/10 rounded-xl;
+  }
+
+  .glass-card-light {
+    @apply backdrop-blur-lg bg-white/80 border border-gray-200 rounded-xl shadow-sm;
+  }
+
+  .btn-ghana {
+    @apply bg-ghana-gold text-ghana-black font-semibold px-6 py-3 rounded-xl
+           hover:bg-yellow-400 transition-all duration-200 active:scale-95;
+  }
+
+  .metric-card {
+    @apply glass-card p-6 hover:border-ghana-gold/30 transition-all duration-300;
+  }
+
+  .sidebar-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium
+           transition-all duration-200 hover:bg-ghana-gold/10;
+  }
+
+  .sidebar-item-active {
+    @apply sidebar-item bg-ghana-gold/15 text-ghana-gold;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .table-row {
+    @apply border-b border-surface-dark-border/50 hover:bg-white/5 transition-colors;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2A3050; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3A4060; }
+
+/* Animations */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+.animate-fade-in-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.animate-fade-in-delay-2 { animation-delay: 0.2s; opacity: 0; }
+.animate-fade-in-delay-3 { animation-delay: 0.3s; opacity: 0; }

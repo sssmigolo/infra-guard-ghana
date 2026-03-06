@@ -1,0 +1,15 @@
+// MIT License - Copyright (c) 2026 InfraGuard AI Contributors
+import { cn } from '@/lib/utils';
+
+interface GlassCardProps {
+    children: React.ReactNode;
+    className?: string;
+}
+
+export function GlassCard({ children, className }: GlassCardProps) {
+    return (
+        <div className={cn('glass-card p-6', className)}>
+            {children}
+        </div>
+    );
+}
